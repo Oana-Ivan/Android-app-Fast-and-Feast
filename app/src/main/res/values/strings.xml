@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Android-app-Fast-and-Feast</string>
+    <string name="app_title">Fast and Feast</string>
+    <string name="delivery_logo">Image: delivery_logo</string>
+    <string name="app_description">Best delivery service</string>
+    <string name="restaurants">See the restaurants</string>
+    <string name="main_register_message">Register</string>
+    <string name="main_log_in_message">Log in</string>
 </resources>
