@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".RestaurantList">
+    <LinearLayout
+        android:id="@+id/restaurants_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="30dp"
+        >
+        <ImageView
+            android:id="@+id/restaurants_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/restaurants"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#F4B872"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/restaurants_list_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/restaurants_head"
+        android:padding="4dp"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>

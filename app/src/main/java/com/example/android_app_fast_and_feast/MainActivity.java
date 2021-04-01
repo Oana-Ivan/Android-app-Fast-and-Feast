@@ -64,10 +64,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
 
-//            case "restaurants": {
-//                intent = new Intent(this, ListRestaurants.class);
-//                startActivity(intent);
-//            }
+            case "restaurants": {
+                intent = new Intent(this, RestaurantList.class);
+                startActivity(intent);
+            }
         }
 
 

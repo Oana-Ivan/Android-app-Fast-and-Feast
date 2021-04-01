@@ -84,7 +84,7 @@
                 android:paddingTop="10dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="10dp"
-                android:text="@string/restaurants"
+                android:text="@string/see_restaurants"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
         </RelativeLayout>
