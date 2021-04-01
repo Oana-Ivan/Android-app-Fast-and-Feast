@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,22 +29,8 @@ public class RestaurantList extends AppCompatActivity {
         imageView.setImageResource(R.mipmap.restaurant);
 
         ArrayList<RestaurantItem> restaurantItems = new ArrayList<>();
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_phone, "KFC", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_user, "McDonalds", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_phone, "KFC", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_user, "McDonalds", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_phone, "KFC", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_user, "McDonalds", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_phone, "KFC", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_user, "McDonalds", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_phone, "KFC", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_user, "McDonalds", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_phone, "KFC", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_user, "McDonalds", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_phone, "KFC", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_user, "McDonalds", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_phone, "KFC", "fast food"));
-        restaurantItems.add(new RestaurantItem(R.drawable.ic_action_user, "McDonalds", "fast food"));
+        restaurantItems.add(new RestaurantItem(R.drawable.restaurant_details_image, "Test-1", "description-1"));
+        restaurantItems.add(new RestaurantItem(R.drawable.restaurant_details_image, "Test-2", "description-2"));
 
         restaurantListRV = findViewById(R.id.restaurants_list_rv);
         restaurantListRV.setHasFixedSize(true);
@@ -53,8 +40,11 @@ public class RestaurantList extends AppCompatActivity {
         restaurantListRV.setLayoutManager(restaurantListLayoutManager);
         restaurantListRV.setAdapter(restaurantListAdapter);
         restaurantListAdapter.setOnItemClickListener(position -> {
-//                restaurantItems.get(position);
             Toast.makeText(RestaurantList.this, restaurantItems.get(position).getRestaurantName(), Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(this, RestaurantDetails.class);
+            intent.putExtra("Restaurant", restaurantItems.get(position));
+            startActivity(intent);
         });
     }
 }

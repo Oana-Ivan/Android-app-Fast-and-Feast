@@ -7,4 +7,6 @@
     <string name="restaurants">Restaurants</string>
     <string name="main_register_message">Register</string>
     <string name="main_log_in_message">Log in</string>
+    <string name="add_review">Add review</string>
+    <string name="menus">Menus</string>
 </resources>

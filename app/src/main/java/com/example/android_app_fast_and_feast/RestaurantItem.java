@@ -1,6 +1,8 @@
 package com.example.android_app_fast_and_feast;
 
-public class RestaurantItem {
+import java.io.Serializable;
+
+public class RestaurantItem implements Serializable {
     private int restaurantImage;
     private String restaurantName;
     private String restaurantDescription;
