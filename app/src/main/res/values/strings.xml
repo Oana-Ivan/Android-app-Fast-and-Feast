@@ -9,6 +9,8 @@
     <string name="main_log_in_message">Log in</string>
     <string name="add_review">Add review</string>
     <string name="menus">Menus</string>
+    <string name="restaurant_name">Restaurant name</string>
+    <string name="menu_add">Add</string>
     <string-array name="products">
         <item>Saorma</item>
         <item>Burger</item>
