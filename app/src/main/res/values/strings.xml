@@ -9,4 +9,16 @@
     <string name="main_log_in_message">Log in</string>
     <string name="add_review">Add review</string>
     <string name="menus">Menus</string>
+    <string-array name="products">
+        <item>Saorma</item>
+        <item>Burger</item>
+        <item>Suc</item>
+        <item>Mincu</item>
+    </string-array>
+    <string-array name="description">
+        <item>Facut cu lacrimile studentilor</item>
+        <item>Facut cu lacrimile studentilor</item>
+        <item>Facut cu lacrimile studentilor</item>
+        <item>Facut cu lacrimile studentilor</item>
+    </string-array>
 </resources>

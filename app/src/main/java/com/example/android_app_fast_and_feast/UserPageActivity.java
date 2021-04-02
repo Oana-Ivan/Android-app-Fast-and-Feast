@@ -2,6 +2,7 @@ package com.example.android_app_fast_and_feast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.RelativeLayout;
@@ -34,12 +35,14 @@ public class UserPageActivity extends AppCompatActivity {
                         switch (index){
                             case 0:
                                 Toast.makeText(UserPageActivity.this, "Restaurant", Toast.LENGTH_SHORT).show();
+                                OpenActivity("Restaurant");
                                 break;
                             case 1:
                                 Toast.makeText(UserPageActivity.this, "My purchases", Toast.LENGTH_SHORT).show();
                                 break;
                             case 2:
-                                Toast.makeText(UserPageActivity.this, "Basket", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UserPageActivity.this, "Shopping Cart", Toast.LENGTH_SHORT).show();
+                                OpenActivity("Shopping Cart");
                                 break;
                             case 3:
                                 Toast.makeText(UserPageActivity.this, "Settings", Toast.LENGTH_SHORT).show();
@@ -50,5 +53,21 @@ public class UserPageActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+    public void OpenActivity(String action){
+        Intent intent;
+        switch (action) {
+            case "Shopping Cart": {
+                intent = new Intent(this, ShoppingCartActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case "Restaurant": {
+                intent = new Intent(this, RestaurantList.class);
+                startActivity(intent);
+                break;
+            }
+
+        }
     }
 }
