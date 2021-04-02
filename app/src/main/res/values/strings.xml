@@ -11,6 +11,8 @@
     <string name="menus">Menus</string>
     <string name="restaurant_name">Restaurant name</string>
     <string name="menu_add">Add</string>
+    <string name="write_review">Write review</string>
+    <string name="restaurant_name">Restaurant name</string>
     <string-array name="products">
         <item>Saorma</item>
         <item>Burger</item>

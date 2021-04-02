@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".RestaurantAddReview" />
         <activity android:name=".MenusList" />
         <activity android:name=".ShoppingCartActivity" />
         <activity android:name=".RestaurantDetails" />

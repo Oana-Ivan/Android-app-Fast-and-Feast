@@ -44,9 +44,9 @@ public class RestaurantDetails extends AppCompatActivity {
                 break;
             }
             case "add_review": {
-//                intent = new Intent(this, RestaurantAddReview.class);
-//                intent.putExtra("Restaurant", currentRestaurant);
-//                startActivity(intent);
+                intent = new Intent(this, RestaurantAddReview.class);
+                intent.putExtra("Restaurant", currentRestaurant);
+                startActivity(intent);
                 break;
             }
         }
