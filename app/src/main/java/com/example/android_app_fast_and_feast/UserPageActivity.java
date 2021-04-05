@@ -39,6 +39,7 @@ public class UserPageActivity extends AppCompatActivity {
                                 break;
                             case 1:
                                 Toast.makeText(UserPageActivity.this, "My purchases", Toast.LENGTH_SHORT).show();
+                                OpenActivity("History");
                                 break;
                             case 2:
                                 Toast.makeText(UserPageActivity.this, "Shopping Cart", Toast.LENGTH_SHORT).show();
@@ -64,6 +65,11 @@ public class UserPageActivity extends AppCompatActivity {
             }
             case "Restaurant": {
                 intent = new Intent(this, RestaurantList.class);
+                startActivity(intent);
+                break;
+            }
+            case "History": {
+                intent = new Intent(this, HistoryActivity.class);
                 startActivity(intent);
                 break;
             }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShoppingCartActivity"
+    tools:context=".HistoryActivity"
     android:background="@drawable/gradient">
 
     <Button
@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ShoppingCart_RecicleView"
+        android:id="@+id/History_RecicleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteY="94dp" />
