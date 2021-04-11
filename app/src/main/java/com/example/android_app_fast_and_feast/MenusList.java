@@ -36,9 +36,9 @@ public class MenusList extends AppCompatActivity {
         // TODO Replace menus
         content.add("Item1");
         content.add("Item2");
-        menuItems.add(new MenuItem("Menu1", content));
-        menuItems.add(new MenuItem("Menu2", content));
-        menuItems.add(new MenuItem("Menu3", content));
+        menuItems.add(new MenuItem("Menu2", "item 1, item 2"));
+        menuItems.add(new MenuItem("Menu1", "item 1, item 2"));
+        menuItems.add(new MenuItem("Menu3", "item 1, item 2"));
 
 
         menusListRV = findViewById(R.id.menus_list_rv);

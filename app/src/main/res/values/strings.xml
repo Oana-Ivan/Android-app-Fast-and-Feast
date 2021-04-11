@@ -12,7 +12,17 @@
     <string name="restaurant_name">Restaurant name</string>
     <string name="menu_add">Add</string>
     <string name="write_review">Write review</string>
-    <string name="confirm_order_message">Your order has been sent. You will be redirected to the user page...</string>
+    <string name="confirm_order_message">Your order has been sent. You will be redirected to the user page…</string>
+    <string name="register_existing_account">Already have an account? Log in here</string>
+    <string name="create_account">Create Account</string>
+    <string name="address">Address</string>
+    <string name="username">Username</string>
+    <string name="register">Register</string>
+    <string name="welcome_username">Welcome, username</string>
+    <string name="phone">Phone</string>
+    <string name="payment">Payment</string>
+    <string name="register_here">Register Here</string>
+    <string name="login">Login</string>
     <string-array name="products">
         <item>Saorma</item>
         <item>Burger</item>

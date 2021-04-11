@@ -29,12 +29,12 @@
         android:layout_marginStart="141dp"
         android:layout_marginLeft="141dp"
         android:layout_marginTop="150dp"
-        android:text="Register"
+        android:text="@string/register"
         android:textColor="@color/white"
         android:textSize="36sp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/register_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -47,7 +47,7 @@
         android:backgroundTint="@android:color/holo_orange_light"
         android:drawableLeft="@drawable/ic_action_user"
         android:ems="10"
-        android:hint="Username"
+        android:hint="@string/username"
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHighlight="@android:color/holo_orange_light"
@@ -57,7 +57,7 @@
         android:textIsSelectable="false" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/register_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -71,7 +71,7 @@
         android:drawableLeft="@drawable/ic_action_password"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColor="@color/white"
         android:textColorHighlight="@android:color/holo_orange_light"
         android:textColorHint="@color/white"
@@ -79,7 +79,7 @@
         android:textCursorDrawable="@android:color/holo_orange_light" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/register_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -92,7 +92,7 @@
         android:backgroundTint="@android:color/holo_orange_light"
         android:drawableLeft="@drawable/ic_action_adress"
         android:ems="10"
-        android:hint="Adress"
+        android:hint="@string/address"
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHighlight="@android:color/holo_orange_light"
@@ -101,7 +101,7 @@
         android:textCursorDrawable="@android:color/holo_orange_light" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/register_phone_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -115,7 +115,7 @@
         android:drawableLeft="@drawable/ic_action_phone"
         android:ems="10"
         android:hint="Phone"
-        android:inputType="textPersonName"
+        android:inputType="phone"
         android:textColor="@color/white"
         android:textColorHighlight="@android:color/holo_orange_light"
         android:textColorHint="@color/white"
@@ -146,7 +146,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Create Account"
+                android:text="@string/create_account"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
         </RelativeLayout>
@@ -159,7 +159,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="68dp"
-        android:text="Already have an account? Log in here"
+        android:text="@string/register_existing_account"
         android:textColor="@color/white" />
 
 </RelativeLayout>

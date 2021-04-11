@@ -33,7 +33,8 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         MenuItem currentMenu = menuItems.get(position);
 
         holder.menuName.setText(currentMenu.getMenuName());
-        holder.menuContent.setText(currentMenu.getMenuContentToString());
+//        holder.menuContent.setText(currentMenu.getMenuContentToString());
+        holder.menuContent.setText(currentMenu.getMenuContent());
     }
 
     @Override

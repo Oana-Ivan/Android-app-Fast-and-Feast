@@ -20,6 +20,7 @@
         android:background="@drawable/rectangle" />
 
     <TextView
+        android:id="@+id/user_page_username"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -29,11 +30,11 @@
         android:layout_marginStart="23dp"
         android:layout_marginLeft="23dp"
         android:layout_marginTop="47dp"
-        android:text="Bine ai venit, Username"
+        android:text="@string/welcome_username"
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/user_page_address"
         android:layout_width="334dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -44,11 +45,11 @@
         android:layout_marginLeft="29dp"
         android:layout_marginTop="90dp"
         android:drawableLeft="@drawable/ic_action_adress"
-        android:text="Adress"
+        android:text="@string/address"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/user_page_phone"
         android:layout_width="334dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -59,11 +60,11 @@
         android:layout_marginLeft="29dp"
         android:layout_marginTop="117dp"
         android:drawableLeft="@drawable/ic_action_phone"
-        android:text="Phone"
+        android:text="@string/phone"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/user_page_payment"
         android:layout_width="334dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -74,7 +75,7 @@
         android:layout_marginLeft="29dp"
         android:layout_marginTop="145dp"
         android:drawableLeft="@drawable/ic_action_payment"
-        android:text="Payment"
+        android:text="@string/payment"
         android:textSize="18sp" />
 
     <com.hitomi.cmlibrary.CircleMenu
