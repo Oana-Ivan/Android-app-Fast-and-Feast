@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "55624394318",
+    "project_id": "fast-and-feast",
+    "storage_bucket": "fast-and-feast.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55624394318:android:8944209bfb570617a8851f",
+        "android_client_info": {
+          "package_name": "com.example.android_app_fast_and_feast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55624394318-bmejvtkv8je760m1vrmvc47q7eujv2bt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn599OtVgxbDb5TE4edTjhLNRn3FZ1tgg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55624394318-bmejvtkv8je760m1vrmvc47q7eujv2bt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
