@@ -5,126 +5,139 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FinishActivity"
-    android:gravity="center"
-    android:orientation="vertical"
     android:background="@drawable/gradient"
     >
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="273dp"
-        android:layout_height="43dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="66dp"
-        android:text="How do you pay?"
-        android:textColor="@android:color/white"
-        android:textSize="30dp"
+    <fragment
+        android:id="@+id/fragment_username"
+        android:name="com.example.android_app_fast_and_feast.UsernameFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="279dp"
-        android:layout_height="54dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="216dp"
-        android:gravity="center"
-        android:text="Phone number"
-        android:textColor="@android:color/white"
-        android:textSize="30dp" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="273dp"
-        android:layout_height="59dp"
-
-        android:layout_marginTop="367dp"
-        android:gravity="center"
-        android:text="Adress"
-        android:textColor="@android:color/white"
-        android:textSize="30dp" />
-
-    <EditText
-        android:id="@+id/register_phone_number"
-        android:layout_width="279dp"
-        android:layout_height="62dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="272dp"
-        android:backgroundTint="@android:color/holo_orange_light"
-        android:drawableLeft="@drawable/ic_action_phone"
-        android:ems="10"
-        android:hint=""
-        android:inputType="textPersonName"
-        android:textColor="@color/white"
-        android:textColorHighlight="@android:color/holo_orange_light"
-        android:textColorHint="@color/white"
-        android:textColorLink="@android:color/holo_orange_light"
-        android:textCursorDrawable="@android:color/holo_orange_light" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="267dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="449dp"
-        android:backgroundTint="@android:color/holo_orange_light"
-        android:drawableLeft="@drawable/ic_action_adress"
-        android:ems="10"
-        android:hint=""
-        android:inputType="textPersonName"
-        android:textColor="@color/white"
-        android:textColorHighlight="@android:color/holo_orange_light"
-        android:textColorHint="@color/white"
-        android:textColorLink="@android:color/holo_orange_light"
-        android:textCursorDrawable="@android:color/holo_orange_light" />
-
-    <RadioGroup
-        android:layout_width="283dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="141dp"
-        android:layout_marginBottom="419dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/radio_selector"
-            android:button="@android:color/transparent"
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="273dp"
+            android:layout_height="43dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="66dp"
+            android:text="How do you pay?"
+            android:textColor="@android:color/white"
+            android:textSize="30dp"
             android:gravity="center"
-            android:text="Cash"
-            android:textColor="@drawable/text_color"
-
             />
 
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:layout_weight="1"
-            android:background="@drawable/radio_selector_right"
-            android:button="@android:color/transparent"
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="279dp"
+            android:layout_height="54dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="216dp"
             android:gravity="center"
-            android:text="Card"
-            android:textColor="@drawable/text_color" />
-    </RadioGroup>
+            android:text="Phone number"
+            android:textColor="@android:color/white"
+            android:textSize="30dp" />
 
-    <Button
-        android:id="@+id/finish_button"
-        android:layout_width="268dp"
-        android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="273dp"
+            android:layout_height="59dp"
+
+            android:layout_marginTop="367dp"
+            android:gravity="center"
+            android:text="Adress"
+            android:textColor="@android:color/white"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/register_phone_number"
+            android:layout_width="279dp"
+            android:layout_height="62dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="272dp"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:drawableLeft="@drawable/ic_action_phone"
+            android:ems="10"
+            android:hint=""
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHighlight="@android:color/holo_orange_light"
+            android:textColorHint="@color/white"
+            android:textColorLink="@android:color/holo_orange_light"
+            android:textCursorDrawable="@android:color/holo_orange_light" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName4"
+            android:layout_width="267dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="449dp"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:drawableLeft="@drawable/ic_action_adress"
+            android:ems="10"
+            android:hint=""
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHighlight="@android:color/holo_orange_light"
+            android:textColorHint="@color/white"
+            android:textColorLink="@android:color/holo_orange_light"
+            android:textCursorDrawable="@android:color/holo_orange_light" />
+
+        <RadioGroup
+            android:layout_width="283dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="141dp"
+            android:layout_marginBottom="419dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:text="Cash"
+                android:textColor="@drawable/text_color"
+
+                />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector_right"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:text="Card"
+                android:textColor="@drawable/text_color" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/finish_button"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
 
 
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="39dp"
-        android:background="@drawable/button"
-        android:shadowRadius="25"
-        android:text="Finish"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="39dp"
+            android:background="@drawable/button"
+            android:shadowRadius="25"
+            android:text="Finish"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+    </RelativeLayout>
 </RelativeLayout>

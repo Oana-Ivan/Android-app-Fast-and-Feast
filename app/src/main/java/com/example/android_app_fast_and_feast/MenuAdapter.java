@@ -1,5 +1,7 @@
 package com.example.android_app_fast_and_feast;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import static com.example.android_app_fast_and_feast.Register.UserPREFERENCES;
+import static com.example.android_app_fast_and_feast.Register.Username;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder>{
     private ArrayList<MenuItem> menuItems;
@@ -54,7 +59,14 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
             addMenu = itemView.findViewById(R.id.menu_add_btn);
 
             addMenu.setOnClickListener(m -> {
-                Toast.makeText(itemView.getContext(), "Added " + menuName.getText() + " to shopping cart", Toast.LENGTH_SHORT).show();
+                SharedPreferences sharedPreferences = itemView.getContext().getSharedPreferences(UserPREFERENCES, Context.MODE_PRIVATE);
+                String username = sharedPreferences.getString(Username, "");
+                if (username.isEmpty()) {
+                    Toast.makeText(itemView.getContext(), "You are not logged in", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(itemView.getContext(), "Added " + menuName.getText() + " to shopping cart", Toast.LENGTH_SHORT).show();
+                }
                 //TODO Add menu to order
             });
 

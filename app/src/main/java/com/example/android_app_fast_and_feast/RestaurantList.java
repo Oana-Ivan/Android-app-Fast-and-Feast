@@ -4,13 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import static com.example.android_app_fast_and_feast.Register.UserPREFERENCES;
+import static com.example.android_app_fast_and_feast.Register.Username;
 
 public class RestaurantList extends AppCompatActivity {
     private TextView Title;
@@ -24,6 +29,11 @@ public class RestaurantList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_list);
+
+        SharedPreferences sharedPreferences = getSharedPreferences(UserPREFERENCES, Context.MODE_PRIVATE);
+        String username = sharedPreferences.getString(Username, "");
+        TextView usernameTV = findViewById(R.id.username);
+        usernameTV.setText(username);
 
         imageView = findViewById(R.id.restaurants_image);
         imageView.setImageResource(R.mipmap.restaurant);

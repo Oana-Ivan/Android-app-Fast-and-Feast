@@ -2,13 +2,19 @@ package com.example.android_app_fast_and_feast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import static com.example.android_app_fast_and_feast.Register.UserPREFERENCES;
+import static com.example.android_app_fast_and_feast.Register.Username;
 
 public class RestaurantAddReview extends AppCompatActivity {
     RestaurantItem currentRestaurant;
@@ -29,14 +35,24 @@ public class RestaurantAddReview extends AppCompatActivity {
 
         sendReviewBtn.setOnClickListener(v -> {
             // TODO Get rating from restaurant review
-            Toast.makeText(RestaurantAddReview.this, "Your rating: " + ratingBar.getRating(), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, RestaurantDetails.class);
-            intent.putExtra("Restaurant", currentRestaurant);
-            intent.putExtra("ReviewText", reviewText.getText());
-            intent.putExtra("NoOfStars", ratingBar.getRating());
-            startActivity(intent);
+            SharedPreferences sharedPreferences = getSharedPreferences(UserPREFERENCES, Context.MODE_PRIVATE);
+            String username = sharedPreferences.getString(Username, "");
+            if (username.isEmpty()) {
+                Toast.makeText(RestaurantAddReview.this, "You are not logged in", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(RestaurantAddReview.this, "Your rating: " + ratingBar.getRating(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, RestaurantDetails.class);
+                intent.putExtra("Restaurant", currentRestaurant);
+                intent.putExtra("ReviewText", reviewText.getText());
+                intent.putExtra("NoOfStars", ratingBar.getRating());
+                startActivity(intent);
+            }
         });
 
-
+        SharedPreferences sharedPreferences = getSharedPreferences(UserPREFERENCES, Context.MODE_PRIVATE);
+        String username = sharedPreferences.getString(Username, "");
+        TextView usernameTV = findViewById(R.id.username);
+        usernameTV.setText(username);
     }
 }

@@ -9,6 +9,16 @@
     android:orientation="vertical"
     tools:context=".FinishActivity">
 
+    <fragment
+        android:id="@+id/fragment_username"
+        android:name="com.example.android_app_fast_and_feast.UsernameFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/textView9"
         android:layout_width="279dp"

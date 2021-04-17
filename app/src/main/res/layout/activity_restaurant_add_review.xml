@@ -7,6 +7,18 @@
     android:background="@drawable/gradient"
     tools:context=".RestaurantAddReview">
 
+    <fragment
+        android:id="@+id/fragment_username"
+        android:name="com.example.android_app_fast_and_feast.UsernameFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toTopOf="@+id/restaurant_name_review"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/restaurant_name_review"
         android:layout_width="match_parent"
