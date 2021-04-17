@@ -56,5 +56,11 @@ public class RestaurantList extends AppCompatActivity {
             intent.putExtra("Restaurant", restaurantItems.get(position));
             startActivity(intent);
         });
+
+        // aici a facut prostii Bianca
+
+        SharedPreferences sharedPref = getSharedPreferences("FastAndFeastApp", Context.MODE_PRIVATE);
+        String valueState = sharedPref.getString("Restaurant","Not Active");
+
     }
 }
