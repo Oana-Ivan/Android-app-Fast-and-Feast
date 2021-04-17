@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,5 +48,11 @@ public class RestaurantList extends AppCompatActivity {
             intent.putExtra("Restaurant", restaurantItems.get(position));
             startActivity(intent);
         });
+
+        // aici a facut prostii Bianca
+
+        SharedPreferences sharedPref = getSharedPreferences("FastAndFeastApp", Context.MODE_PRIVATE);
+        String valueState = sharedPref.getString("Restaurant","Not Active");
+
     }
 }
