@@ -69,17 +69,20 @@ public class MainActivity extends AppCompatActivity {
             case "register": {
                 intent = new Intent(this, Register.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_from_left);
                 break;
             }
             case "login": {
                 intent = new Intent(this, LogIn.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_from_left);
                 break;
             }
 
             case "restaurants": {
                 intent = new Intent(this, RestaurantList.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_from_left);
             }
         }
 

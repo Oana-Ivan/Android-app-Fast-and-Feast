@@ -7,6 +7,17 @@
     tools:context=".HistoryActivity"
     android:background="@drawable/gradient">
 
+    <fragment
+        android:id="@+id/fragment_username"
+        android:name="com.example.android_app_fast_and_feast.UsernameFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/History_RecicleView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/finish_button"
         android:layout_width="wrap_content"
@@ -24,7 +35,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/History_RecicleView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteY="94dp" />
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/finish_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

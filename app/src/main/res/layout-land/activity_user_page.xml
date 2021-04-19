@@ -8,16 +8,20 @@
     tools:context=".UserPageActivity"
     android:id="@+id/user_page_relative_layout">
 
-    <TextView
+    <RelativeLayout
         android:id="@+id/textView6"
-        android:layout_width="563dp"
-        android:layout_height="329dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
 
-        android:layout_marginTop="22dp"
-        android:background="@drawable/rectangle" />
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        android:padding="20dp"
+        android:background="@drawable/rectangle" >
 
     <TextView
         android:id="@+id/user_page_username"
@@ -31,7 +35,9 @@
         android:layout_marginLeft="98dp"
         android:layout_marginTop="41dp"
         android:text="@string/welcome_username"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/user_page_address"
@@ -80,8 +86,8 @@
 
     <com.hitomi.cmlibrary.CircleMenu
         android:id="@+id/user_page_circle_menu"
-        android:layout_width="397dp"
-        android:layout_height="417dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
 
         android:layout_alignParentEnd="true"
@@ -92,4 +98,14 @@
         android:layout_marginRight="33dp"
         app:layout_constraintVertical_bias=".7" />
 
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/fragment_logout"
+        android:name="com.example.android_app_fast_and_feast.LogoutFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView6"
+        />
 </RelativeLayout>

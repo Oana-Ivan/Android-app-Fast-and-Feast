@@ -7,6 +7,17 @@
     android:background="@drawable/gradient"
     tools:context=".RestaurantDetails">
 
+    <fragment
+        android:id="@+id/fragment_username"
+        android:name="com.example.android_app_fast_and_feast.UsernameFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/restaurant_details_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/restaurant_details_image"
         android:layout_width="200dp"

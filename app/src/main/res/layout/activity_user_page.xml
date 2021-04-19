@@ -88,4 +88,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="216dp" />
 
+    <fragment
+        android:id="@+id/fragment_logout"
+        android:name="com.example.android_app_fast_and_feast.LogoutFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/user_page_circle_menu"
+        />
 </RelativeLayout>
