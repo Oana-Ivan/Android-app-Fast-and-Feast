@@ -1,19 +1,31 @@
 package com.example.android_app_fast_and_feast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android_app_fast_and_feast.firebasecode.Menu;
+import com.example.android_app_fast_and_feast.firebasecode.Restaurant;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class MenusList extends AppCompatActivity {
     private RestaurantItem currentRestaurant;
     private TextView restaurantName;
+    DatabaseReference reff;
 
     private RecyclerView menusListRV;
     private MenuAdapter menusListAdapter;
@@ -32,13 +44,50 @@ public class MenusList extends AppCompatActivity {
 
         ArrayList<MenuItem> menuItems = new ArrayList<>();
         ArrayList<String> content = new ArrayList<>();
+        //Bianca
+
+        reff = FirebaseDatabase.getInstance().getReference().child("Restaurant");
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    int ok = 0;
+                    Restaurant restaurant = snapshot.getValue(Restaurant.class);
+                    //System.out.println(restaurant.getName());
+                    Log.d("myTag", "fdgdf");
+                    if(restaurant.getName().contentEquals(currentRestaurant.getRestaurantName())){
+                       DataSnapshot menureff = snapshot.child("menu");
+                        ok = 1;
+                       for(DataSnapshot snapshotMenu : menureff.getChildren()){
+                           Menu m = snapshotMenu.getValue(Menu.class);
+
+                           menuItems.add(new MenuItem(m.getName(), m.getDescription()));
+
+                       }
+                       if(ok == 1){
+                            break;
+                        }
+                    }
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        //
+
 
         // TODO Replace menus
         content.add("Item1");
         content.add("Item2");
-        menuItems.add(new MenuItem("Menu2", "item 1, item 2"));
-        menuItems.add(new MenuItem("Menu1", "item 1, item 2"));
-        menuItems.add(new MenuItem("Menu3", "item 1, item 2"));
+       // menuItems.add(new MenuItem("Menu2", "item 1, item 2"));
+
+       // menuItems.add(new MenuItem("Menu3", "item 1, item 2"));
 
 
         menusListRV = findViewById(R.id.menus_list_rv);

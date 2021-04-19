@@ -1,5 +1,6 @@
 package com.example.android_app_fast_and_feast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +13,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android_app_fast_and_feast.firebasecode.Restaurant;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class RestaurantList extends AppCompatActivity {
@@ -22,6 +30,8 @@ public class RestaurantList extends AppCompatActivity {
     private RestaurantAdapter restaurantListAdapter;
     private RecyclerView.LayoutManager restaurantListLayoutManager;
 
+    DatabaseReference reff;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +41,28 @@ public class RestaurantList extends AppCompatActivity {
         imageView.setImageResource(R.mipmap.restaurant);
 
         ArrayList<RestaurantItem> restaurantItems = new ArrayList<>();
-        restaurantItems.add(new RestaurantItem(R.drawable.restaurant_details_image, "Test-1", "description-1"));
-        restaurantItems.add(new RestaurantItem(R.drawable.restaurant_details_image, "Test-2", "description-2"));
+
+        reff = FirebaseDatabase.getInstance().getReference().child("Restaurant");
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Restaurant restaurant = snapshot.getValue(Restaurant.class);
+
+                    System.out.println(restaurant.getName());
+                    restaurantItems.add(new RestaurantItem(R.drawable.restaurant_details_image, restaurant.getName(), "description-1"));
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        //restaurantItems.add(new RestaurantItem(R.drawable.restaurant_details_image, "Test-2", "description-2"));
 
         restaurantListRV = findViewById(R.id.restaurants_list_rv);
         restaurantListRV.setHasFixedSize(true);

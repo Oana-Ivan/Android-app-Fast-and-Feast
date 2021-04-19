@@ -35,4 +35,30 @@
         <item>Facut cu lacrimile studentilor</item>
         <item>Facut cu lacrimile studentilor</item>
     </string-array>
+    <string-array name="restaurants">
+        <item>La Gigel</item>
+        <item>La Cornel</item>
+        <item>La Mincu</item>
+        <item>New gardens</item>
+    </string-array>
+    <string-array name="menus">
+        <item>Shaorma</item>
+        <item>Cartofi</item>
+        <item>Fasole</item>
+        <item>Ciolan</item>
+        <item>Plansul studentilor</item>
+        <item>Suferinta studentilor</item>
+        <item>Coq au vin</item>
+        <item>Cassoulet</item>
+    </string-array>
+    <string-array name="descriptionFirebase">
+        <item>Cartofi,Varza,Carne de porc</item>
+        <item>Cartofi cu sare</item>
+        <item>Fasole care nu merge fara ciolan</item>
+        <item>Ciolan care nu merge fara fasole</item>
+        <item>Lacrimile studentilor</item>
+        <item>Durerea studentilor</item>
+        <item>Mancare franceza cu vin</item>
+        <item>Echivalentul in romana la fasole cu ciolan</item>
+    </string-array>
 </resources>

@@ -11,6 +11,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.android_app_fast_and_feast.firebasecode.Restaurant;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView logoImage;
@@ -18,11 +23,19 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout loginAndRegisterLL;
     private TextView loginBtn;
     private TextView registerBtn;
+    private boolean insertIntoDatabase = false;
+    DatabaseReference restaurantReff;
+
+    String s1[], s2[], s3[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toast.makeText(MainActivity.this, "Firebase connection Success", Toast.LENGTH_LONG).show();
+        if(insertIntoDatabase){
+            InsertIntoFirebase();
+        }
 
         logoImage = (ImageView) findViewById(R.id.main_logo_image);
         seeRestaurantsBtn = (CardView) findViewById(R.id.main_btn_see_restaurants);
@@ -71,5 +84,28 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+    public void InsertIntoFirebase(){
+        restaurantReff = FirebaseDatabase.getInstance().getReference().child("Restaurant");
+        s1 = getResources().getStringArray(R.array.restaurants);
+        s2 = getResources().getStringArray(R.array.menus);
+        s3 = getResources().getStringArray(R.array.descriptionFirebase);
+
+        for(int i = 0 ; i < s1.length; i++){
+            Restaurant restaurant = new Restaurant();
+            restaurant.setName(s1[i]);
+            restaurant.setMenu(s2[i*2],s3[i*2]);
+            restaurant.setMenu(s2[i*2 + 1],s3[i*2 + 1]);
+            restaurantReff.push().setValue(restaurant);
+
+        }
+        // bucata de cod pt inserarea unui nou restaurant
+        /*
+        Restaurant restaurant = new Restaurant();
+        restaurant.setName(s1[i]);
+        restaurant.setMenu(s2[i*2],s3[i*2]);
+         */
+
+        //Restaurant restaurant = new Restaurant();
     }
 }
