@@ -10,18 +10,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 public class ShoppingCartAdapter extends RecyclerView .Adapter<ShoppingCartAdapter.MyViewHolder>{
 
-    String data1[], data2[];
-    int images[];
+    List<String> data1, data2;
+    List<Integer> images;
     Context context;
 
-    public ShoppingCartAdapter(Context ct, String s1[], String s2[], int img[]){
-        context = ct;
-        data1 = s1;
-        data2 = s2;
-        images = img;
+    public ShoppingCartAdapter(List<String> data1, List<String> data2, List<Integer> images, Context context) {
+        this.data1 = data1;
+        this.data2 = data2;
+        this.images = images;
+        this.context = context;
     }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -33,14 +36,14 @@ public class ShoppingCartAdapter extends RecyclerView .Adapter<ShoppingCartAdapt
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.shoppingCartText1.setText(data1[position]);
-        holder.shoppingCartText2.setText(data2[position]);
-        holder.shoppingCartImage.setImageResource(images[position]);
+        holder.shoppingCartText1.setText(data1.get(position));
+        holder.shoppingCartText2.setText(data2.get(position));
+        holder.shoppingCartImage.setImageResource(images.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return data1.length;
+        return data1.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{

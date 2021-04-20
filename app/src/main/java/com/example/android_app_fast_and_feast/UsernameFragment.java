@@ -35,8 +35,14 @@ public class UsernameFragment extends Fragment {
 
         v.setOnClickListener(v1 -> {
             // redirect to user page activity
-            Intent intent = new Intent(getContext(), UserPageActivity.class);
-            startActivity(intent);
+            if (!username.equals("")) {
+                Intent intent = new Intent(getContext(), UserPageActivity.class);
+                startActivity(intent);
+            }
+            else {
+                Intent intent = new Intent(getContext(), LogIn.class);
+                startActivity(intent);
+            }
         });
         return v;
     }

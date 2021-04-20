@@ -26,6 +26,8 @@ public class LogoutFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_logout, container, false);
         v.setOnClickListener(v1 -> {
+            MainActivity.isLoggedin = false;
+
             // delete username from shared preferences
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences(UserPREFERENCES, Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();

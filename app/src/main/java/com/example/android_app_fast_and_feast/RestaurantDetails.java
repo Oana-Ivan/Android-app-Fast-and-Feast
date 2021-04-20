@@ -39,7 +39,7 @@ public class RestaurantDetails extends AppCompatActivity {
         addReview.setOnClickListener(r -> openActivity("add_review"));
 
         SharedPreferences sharedPreferences = getSharedPreferences(UserPREFERENCES, Context.MODE_PRIVATE);
-        String username = sharedPreferences.getString(Username, "");
+        String username = sharedPreferences.getString(Username, "login");
         TextView usernameTV = findViewById(R.id.username);
         usernameTV.setText(username);
     }

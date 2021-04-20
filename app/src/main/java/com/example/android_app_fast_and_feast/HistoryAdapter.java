@@ -10,16 +10,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHolder>{
 
-    String data1[], data2[];
-    int images[];
+    List<String> data1, data2;
+    List<Integer> images;
     Context context;
-    public HistoryAdapter(Context ct, String s1[], String s2[], int img[]){
-        context = ct;
-        data1 = s1;
-        data2 = s2;
-        images = img;
+
+    public HistoryAdapter(List<String> data1, List<String> data2, List<Integer> images, Context context) {
+        this.data1 = data1;
+        this.data2 = data2;
+        this.images = images;
+        this.context = context;
     }
 
     @NonNull
@@ -32,15 +35,16 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull HistoryAdapter.MyViewHolder holder, int position) {
-        holder.shoppingCartText1.setText(data1[position]);
-        holder.shoppingCartText2.setText(data2[position]);
-        holder.shoppingCartImage.setImageResource(images[position]);
+        holder.shoppingCartText1.setText(data1.get(position));
+        holder.shoppingCartText2.setText(data2.get(position));
+        holder.shoppingCartImage.setImageResource(images.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return data1.length;
+        return data1.size();
     }
+
     public class MyViewHolder extends RecyclerView.ViewHolder{
         TextView shoppingCartText1, shoppingCartText2;
         ImageView shoppingCartImage;

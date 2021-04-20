@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android_app_fast_and_feast.database.AppDatabase;
+import com.example.android_app_fast_and_feast.database.OrderDao;
 import com.example.android_app_fast_and_feast.database.UserDao;
 
 import static com.example.android_app_fast_and_feast.Register.UserPREFERENCES;
@@ -25,29 +26,36 @@ public class LogIn extends AppCompatActivity {
     private EditText usernameET;
     private EditText passwordET;
     private CardView loginBtn;
+    public static int orderNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        registerBtn = (TextView) findViewById(R.id.register);
-        loginBtn = findViewById(R.id.login_btn_user_page);
-        usernameET = findViewById(R.id.login_username);
-        passwordET = findViewById(R.id.login_password);
+        if (!MainActivity.isLoggedin) {
+            registerBtn = (TextView) findViewById(R.id.register);
+            loginBtn = findViewById(R.id.login_btn_user_page);
+            usernameET = findViewById(R.id.login_username);
+            passwordET = findViewById(R.id.login_password);
 
-        // redirect to Register
-        registerBtn.setOnClickListener(v -> openActivity("register"));
+            // redirect to Register
+            registerBtn.setOnClickListener(v -> openActivity("register"));
 
-        loginBtn.setOnClickListener(v -> {
-            // verify credentials
-            if (!usernameET.getText().toString().isEmpty() && !passwordET.getText().toString().isEmpty()) {
-                verifyUser(usernameET.getText().toString(), passwordET.getText().toString());
-            }
-            else {
-                Toast.makeText(this, "All fields required!", Toast.LENGTH_LONG).show();
-            }
-        });
+            loginBtn.setOnClickListener(v -> {
+                // verify credentials
+                if (!usernameET.getText().toString().isEmpty() && !passwordET.getText().toString().isEmpty()) {
+                    verifyUser(usernameET.getText().toString(), passwordET.getText().toString());
+                }
+                else {
+                    Toast.makeText(this, "All fields required!", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        else {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 
     private void verifyUser(String username, String password) {
@@ -62,7 +70,14 @@ public class LogIn extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(Username, currentUser.getUsername());
                 editor.apply();
+
+                OrderDao orderDao = db.orderDao();
+                orderNumber = orderDao.getNoOfOrders() + 1;
+
+                MainActivity.isLoggedin = true;
+
                 Toast.makeText(this, "Hello, " + sharedpreferences.getString(Username, ""), Toast.LENGTH_LONG).show();
+                finish();
                 openActivity("user_activity");
             }
             else {

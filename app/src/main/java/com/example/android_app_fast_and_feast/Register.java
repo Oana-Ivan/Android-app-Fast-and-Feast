@@ -31,16 +31,21 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        loginBtn = (TextView) findViewById(R.id.logIn);
-        registerBtn = (CardView) findViewById(R.id.register_card_view);
-        username = (EditText) findViewById(R.id.register_username);
-        password = (EditText) findViewById(R.id.register_password);
-        address = (EditText) findViewById(R.id.register_address);
-        phoneNumber = (EditText) findViewById(R.id.register_phone_number);
+        if (!MainActivity.isLoggedin) {
+            loginBtn = (TextView) findViewById(R.id.logIn);
+            registerBtn = (CardView) findViewById(R.id.register_card_view);
+            username = (EditText) findViewById(R.id.register_username);
+            password = (EditText) findViewById(R.id.register_password);
+            address = (EditText) findViewById(R.id.register_address);
+            phoneNumber = (EditText) findViewById(R.id.register_phone_number);
 
-        loginBtn.setOnClickListener(v -> openLogIn());
-        registerBtn.setOnClickListener(v -> openUserPage());
-
+            loginBtn.setOnClickListener(v -> openLogIn());
+            registerBtn.setOnClickListener(v -> openUserPage());
+        }
+        else {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void openLogIn(){
@@ -71,6 +76,9 @@ public class Register extends AppCompatActivity {
                 editor.apply();
                 Toast.makeText(this, "Hello, " + sharedpreferences.getString(Username, ""), Toast.LENGTH_LONG).show();
 
+                MainActivity.isLoggedin = true;
+
+                finish();
                 Intent intent = new Intent(this, UserPageActivity.class);
                 startActivity(intent);
             }

@@ -12,6 +12,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
+
+import com.example.android_app_fast_and_feast.database.AppDatabase;
+import com.example.android_app_fast_and_feast.database.OrderDao;
+import com.example.android_app_fast_and_feast.database.UserDao;
 
 import java.util.ArrayList;
 
@@ -65,9 +70,22 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
                     Toast.makeText(itemView.getContext(), "You are not logged in", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    SharedPreferences sharedpreferences = itemView.getContext().getSharedPreferences(UserPREFERENCES, Context.MODE_PRIVATE);
+                    username = sharedpreferences.getString(Username, "");
+
+                    AppDatabase db = Room.databaseBuilder(itemView.getContext(), AppDatabase.class, "db-app").allowMainThreadQueries().build();
+                    UserDao userDao = db.userDao();
+                    OrderDao orderDao = db.orderDao();
+                    User currentUser = userDao.findByUsername(username);
+
+                    Order order = new Order();
+                    order.setOrderNumber(LogIn.orderNumber);
+                    order.setUsername(currentUser.getUsername());
+                    order.setMenuName(menuName.getText().toString());
+                    orderDao.insertAll(order);
+
                     Toast.makeText(itemView.getContext(), "Added " + menuName.getText() + " to shopping cart", Toast.LENGTH_SHORT).show();
                 }
-                //TODO Add menu to order
             });
 
         }

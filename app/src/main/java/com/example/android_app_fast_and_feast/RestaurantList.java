@@ -41,7 +41,7 @@ public class RestaurantList extends AppCompatActivity {
         setContentView(R.layout.activity_restaurant_list);
 
         SharedPreferences sharedPreferences = getSharedPreferences(UserPREFERENCES, Context.MODE_PRIVATE);
-        String username = sharedPreferences.getString(Username, "");
+        String username = sharedPreferences.getString(Username, "login");
         TextView usernameTV = findViewById(R.id.username);
         usernameTV.setText(username);
 
@@ -58,7 +58,7 @@ public class RestaurantList extends AppCompatActivity {
                     Restaurant restaurant = snapshot.getValue(Restaurant.class);
 
                     System.out.println(restaurant.getName());
-                    restaurantItems.add(new RestaurantItem(R.drawable.restaurant_details_image, restaurant.getName(), "description-1"));
+                    restaurantItems.add(new RestaurantItem(R.drawable.restaurant_details_image, restaurant.getName(), "food"));
                 }
 
             }

@@ -104,7 +104,7 @@ public class MenusList extends AppCompatActivity {
         menusListRV.setAdapter(menusListAdapter);
 
         SharedPreferences sharedPreferences = getSharedPreferences(UserPREFERENCES, Context.MODE_PRIVATE);
-        String username = sharedPreferences.getString(Username, "");
+        String username = sharedPreferences.getString(Username, "login");
         TextView usernameTV = findViewById(R.id.username);
         usernameTV.setText(username);
     }
