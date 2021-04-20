@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +42,7 @@ public class RestaurantList extends AppCompatActivity {
         setContentView(R.layout.activity_restaurant_list);
 
         SharedPreferences sharedPreferences = getSharedPreferences(UserPREFERENCES, Context.MODE_PRIVATE);
-        String username = sharedPreferences.getString(Username, "login");
+        String username = sharedPreferences.getString(Username, "");
         TextView usernameTV = findViewById(R.id.username);
         usernameTV.setText(username);
 
